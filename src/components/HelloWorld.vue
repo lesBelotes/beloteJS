@@ -31,10 +31,14 @@
 </template>
 
 <script>
+import BeloteServices from "@/components/ajax/BeloteServices";
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  created:function(){
+    console.log(new BeloteServices())
   }
 }
 </script>
