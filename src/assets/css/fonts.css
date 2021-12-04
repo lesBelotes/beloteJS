@@ -1,0 +1,8 @@
+@font-face {
+    font-family: ArialBOLD;
+    src: url("fonts/arialbd.ttf") format("truetype");
+}
+@font-face {
+    font-family: ArialITALIC;
+    src: url("fonts/ariali.ttf") format("truetype");
+}
