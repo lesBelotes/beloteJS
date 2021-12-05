@@ -1,10 +1,6 @@
 import BeloteAjax from "@/components/ajax/BeloteAjax";
 
-
-
-const BLT_CONNECT="/connect";
-
-
+const BLT_CONNECT="/beloteArea/connecte";
 
 export default class BeloteServices {
 
@@ -14,30 +10,19 @@ export default class BeloteServices {
 
     }
 
-
-
     connect(callback){
 
         const deferred =  this.ajax.get(this._buildUrl(BLT_CONNECT))
-
         this._managePromiseResponse(deferred,callback)
 
     }
-
-
-
     /**
 
      * private function
-
      * @param {*} deferred 
-
      * @param {*} callback 
-
      * @param {*} errorCallback 
-
      */
-
     _managePromiseResponse(deferred,callback, errorCallback){
 
           deferred.then(function (result) {
@@ -63,17 +48,11 @@ export default class BeloteServices {
       }
 
     /**
-
      * private function
-
      * @param {*} url  String : /your_resource_path
-
      * @param {*} params Json Object {arg_key1:arg_value1, arg_key2:arg_value2 } => ?arg_key1=arg_value1&arg_key2=arg_value2
-
      * @param {*} pathArgs Arrays [arg1,arg2] => /arg1/arg2
-
      * @returns 
-
      */
 
     _buildUrl(url, params,pathArgs){
@@ -96,14 +75,9 @@ export default class BeloteServices {
 
                 url = url.concat(key).concat("=").concat(params[key]).concat("&");
 
-                
-
             })
-
         }
-
         return url
-
     }
 
 }

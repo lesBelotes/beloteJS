@@ -6,6 +6,7 @@ Vue.use(VueRouter)
 import HomePage from "@/components/HomePage";
 const publicPath= "";
 const routers = [
+{ path: publicPath+'/', component: HomePage },
 { path: publicPath+'/home', component: HomePage },
 ]
 

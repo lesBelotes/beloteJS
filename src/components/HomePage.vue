@@ -10,7 +10,7 @@
         </aside>
 
         <main class="welcomePageBody">
-            Belote Area
+            
         </main>
 
         <footer>
@@ -26,8 +26,12 @@
         props: {},
         computed:{},
         methods:{},
-        mounted(){}
-         }
+        mounted(){
+            this.$beloteService.connect(function (response) {
+            alert("you're connected : " + response)
+          })
+        }
+    }
 </script>
 
 <style scoped>
@@ -62,18 +66,12 @@
         width: 100%;
     }
     .homePage .welcomePageBody {
-        height: 700px;
-        overflow: auto;
+        height: 710px;
         display: block;
         float: right;
-        width: calc(100% - 320px)!important;
-        left: inherit!important;
-        right: 0!important;
-        top: 0!important;
-        background: #fff;
-        padding: 0px 25px 0px 10px;
-        box-sizing: border-box;
-        box-shadow: 0 0 5px 0 rgba(140, 140, 140, 0.88);
-        border: none #241f1f;
+        width: calc(100% - 330px)!important;
+        background-image: url(../assets/images/belote_area.png);
+        background-size: 100%;
+        margin: 0px 10px 0px 10px;
     }
 </style>

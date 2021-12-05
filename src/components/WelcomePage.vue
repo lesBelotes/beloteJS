@@ -10,6 +10,12 @@
         name: 'WelcomePage',
         router,
         components: {},
+         beforeCreate:function () {
+          const self =this;
+          this.$beloteService.onAuthError=function () {
+            self.$router.push('login')
+          }
+        }
     }
 </script>
 <style>
