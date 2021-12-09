@@ -10,8 +10,11 @@
         </aside>
 
         <main class="welcomePageBody">
-            <RoundCardView :cards="[{title:'Card1',id:'carreau_9'},{title:'Card2',id:'coeur_10'},{title:'Card3',id:'trefle_9'},{title:'Card4',id:'pique_9'}]"  />
-             <CardsInHand :cards="[{title:'Card1',id:'carreau_9'},{title:'Card2',id:'coeur_10'},{title:'Card3',id:'trefle_9'},{title:'Card4',id:'pique_9'}]"  />
+            <RoundCardView :cards="playedCards"  />
+             <CardsInHand
+                   @cardDblclick="onCardPlayed"
+                    :cards="[{title:'Card1',id:'carreau_9'},{title:'Card2',id:'coeur_10'},{title:'Card3',id:'trefle_9'},{title:'Card4',id:'pique_9'}]" 
+              />
         </main>
 
         <footer>
@@ -28,8 +31,34 @@ import CardsInHand from './CardsInHand.vue'
         name: "HomePage",
         components:{RoundCardView,CardsInHand},
         props: {},
+        data(){
+            return {
+                playedCards:[]
+            }
+        },
         computed:{},
-        methods:{},
+        methods:{
+            onCardPlayed({card,callback}){
+                const self =this;
+                if(this.playedCards.length<4){
+                    this.playedCards.push(card)
+                    callback()
+                }
+                if(this.playedCards.length===4){
+                
+                        const f = function(i){
+                            setTimeout(function(){
+                                self.playedCards.splice(0,1)
+                                if(self.playedCards.length>0)
+                                f(i/2);
+                            },i)
+                        }
+                        f(400);
+
+                  
+                }
+            }
+        },
         mounted(){
             this.$beloteService.connect(function (response) {
             alert("you're connected : " + response)
@@ -74,7 +103,7 @@ import CardsInHand from './CardsInHand.vue'
         display: block;
         float: right;
         width: calc(100% - 330px)!important;
-        background-image: url(../assets/images/belote_area.png);
+        background-image: url(../assets/images/tapis.jpg);
         background-size: 100%;
         margin: 0px 10px 0px 10px;
     }

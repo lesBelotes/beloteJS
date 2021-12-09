@@ -1,7 +1,9 @@
 <template>
     <div class="CardsInHand">
         
-        <div :class="card.id" v-for="(card,index) in cards" :key="index" />
+        <div :class="card.id" v-for="(card,index) in handCards" :key="index" 
+          @dblclick="onDblclick(card)"
+        />
          
     </div>
 </template>
@@ -10,7 +12,24 @@
 export default {
     name:"CardsInHand",
     props:{
-        cards:[]
+        cards:[],
+    },
+    data(){
+        return {
+            handCards:[]
+        }
+    },
+    methods:{
+        onDblclick(card){
+            const self = this;
+            this.$emit('cardDblclick',{card:card, callback:function(){
+                self.handCards.splice(self.handCards.indexOf(card),1)
+            }})
+            
+        }
+    },
+    created(){
+        this.handCards = this.cards;
     }
 
 }
