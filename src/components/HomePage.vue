@@ -10,6 +10,10 @@
         </aside>
 
         <main class="welcomePageBody">
+            <div class="score" style="float:right">
+                  <div> Nous  : 120</div>
+                  <div> Eux   : 100</div>
+            </div>
             <RoundCardView :cards="playedCards"  />
              <CardsInHand
                    @cardDblclick="onCardPlayed"
@@ -45,7 +49,6 @@ import CardsInHand from './CardsInHand.vue'
                     callback()
                 }
                 if(this.playedCards.length===4){
-                
                         const f = function(i){
                             setTimeout(function(){
                                 self.playedCards.splice(0,1)
@@ -54,9 +57,17 @@ import CardsInHand from './CardsInHand.vue'
                             },i)
                         }
                         f(400);
-
-                  
                 }
+            },
+            calculRoundScore(){
+                if(this.playedCards.length===4){
+                    this.playedCards.forEach(function(){
+
+                                    })
+                }else{
+                    throw Error('cant compute score : need 4 cards. found  '+this.playedCards.length);
+                }
+                
             }
         },
         mounted(){
@@ -106,6 +117,20 @@ import CardsInHand from './CardsInHand.vue'
         background-image: url(../assets/images/tapis.jpg);
         background-size: 100%;
         margin: 0px 10px 0px 10px;
+    }
+    .score{
+        margin-right: 42px;
+        float: right;
+        width: 150px;
+        height: 120px;
+        box-shadow: 0 0 5px 0 rgba(140, 140, 140, 1);
+        background-color: rgba(71, 69, 69, 0.7)
+    }
+    .score>div{
+        padding: 10px;
+        color: #fff;
+        font-size:1.5em;
+        font-weight: bold;
     }
     @import url(../assets/css/cards.css);
 </style>
