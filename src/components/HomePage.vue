@@ -10,7 +10,8 @@
         </aside>
 
         <main class="welcomePageBody">
-            
+            <RoundCardView :cards="[{title:'Card1',id:'carreau_9'},{title:'Card2',id:'coeur_10'},{title:'Card3',id:'trefle_9'},{title:'Card4',id:'pique_9'}]"  />
+             <CardsInHand :cards="[{title:'Card1',id:'carreau_9'},{title:'Card2',id:'coeur_10'},{title:'Card3',id:'trefle_9'},{title:'Card4',id:'pique_9'}]"  />
         </main>
 
         <footer>
@@ -20,9 +21,12 @@
     </div>
 </template>
 <script>
+import CardsInHand from './CardsInHand.vue'
+    import RoundCardView from './RoundCardsView'
+
     export default {
         name: "HomePage",
-        components:{},
+        components:{RoundCardView,CardsInHand},
         props: {},
         computed:{},
         methods:{},
@@ -34,7 +38,7 @@
     }
 </script>
 
-<style scoped>
+<style >
    .header{
         float: right;
         width: calc(100% - 320px);
@@ -74,4 +78,5 @@
         background-size: 100%;
         margin: 0px 10px 0px 10px;
     }
+    @import url(../assets/css/cards.css);
 </style>

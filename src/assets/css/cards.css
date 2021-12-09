@@ -1,0 +1,19 @@
+.carreau_9{
+    background-image: url(../images/9_carreau.png);
+     background-size: 100%;
+}
+
+.pique_9{
+    background-image: url(../images/9_pique.png);
+     background-size: 100%;
+}
+
+.trefle_9{
+    background-image: url(../images/9_trefle.png);
+     background-size: 100%;
+}
+
+.coeur_10{
+    background-image: url(../images/10_coeur.png);
+     background-size: 100%;
+}
