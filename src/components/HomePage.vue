@@ -2,14 +2,23 @@
     <div class="homePage">
 
         <header class="header">
-            header
+          <div class="text-center">  
+            
+            <v-btn v-on:click="affichierGame" class="mx-2" fab dark  color="indigo" >
+      <v-icon dark>
+        mdi-plus
+      </v-icon>
+    </v-btn>
+    </div>
+
         </header>
 
         <aside class="home_sidebar_left">
             left
         </aside>
 
-        <main class="welcomePageBody">
+        <main class="welcomePageBody" >
+        <div v-if="affichejeux==true">
             <div class="score" style="float:right">
                   <div> Nous  : 120</div>
                   <div> Eux   : 100</div>
@@ -18,7 +27,9 @@
              <CardsInHand
                    @cardDblclick="onCardPlayed"
                     :cards="[{title:'Card1',id:'carreau_9'},{title:'Card2',id:'coeur_10'},{title:'Card3',id:'trefle_9'},{title:'Card4',id:'pique_9'}]" 
-              />
+              /> 
+        </div>
+            
         </main>
 
         <footer>
@@ -37,11 +48,24 @@ import CardsInHand from './CardsInHand.vue'
         props: {},
         data(){
             return {
+                affichejeux:false,
                 playedCards:[]
             }
         },
         computed:{},
         methods:{
+            affichierGame:function(){
+                 this.$beloteService.create(this.traitmentjeux)
+                 
+                console.log("hello");
+            
+           },
+           traitmentjeux:function(gamedata){
+             console.log("bienvenue saisie une partie");
+                  this.affichejeux=true;
+                  console.log(gamedata);
+           },
+           
             onCardPlayed({card,callback}){
                 const self =this;
                 if(this.playedCards.length<4){
