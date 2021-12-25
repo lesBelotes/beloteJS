@@ -32,7 +32,7 @@
 
            <div id="left">
 
-              {{info}}
+              
 
           </div>
 
@@ -112,7 +112,7 @@ import CardsInHand from './CardsInHand.vue'
 
                 playedCards:[],
 
-                info:{},
+                games:[],
 
             }
 
@@ -148,7 +148,7 @@ import CardsInHand from './CardsInHand.vue'
 
            traitmentresponse:function(datagame){
 
-                    this.info=datagame;
+                    this.games=datagame;
 
                     console.log(datagame);
 
