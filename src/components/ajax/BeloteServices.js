@@ -1,7 +1,8 @@
 import BeloteAjax from "@/components/ajax/BeloteAjax";
 
-const BLT_CONNECT="/beloteArea/connecte";
+const BLT_CONNECT="/beloteArea/connecte/{pseudo}/{ip}/{id}/{idgame}";
 const BLT_CREAT="/belote/create";
+const BLT_GAMES="/belote/games";
 
 export default class BeloteServices {
 
@@ -24,6 +25,12 @@ export default class BeloteServices {
        const deferred= this.ajax.get(this._buildUrl(BLT_CREAT))
        this._managePromiseResponse(deferred,callback)
     }
+
+    affichegames(callback){
+
+        const deferred= this.ajax.get(this._buildUrl(BLT_GAMES))
+        this._managePromiseResponse(deferred,callback)
+     }
     /**
 
      * private function

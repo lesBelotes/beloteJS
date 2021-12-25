@@ -14,7 +14,12 @@
         </header>
 
         <aside class="home_sidebar_left">
-            left
+           <div id="left">
+              {{info}}
+          </div>
+           
+           
+           
         </aside>
 
         <main class="welcomePageBody" >
@@ -49,7 +54,8 @@ import CardsInHand from './CardsInHand.vue'
         data(){
             return {
                 affichejeux:false,
-                playedCards:[]
+                playedCards:[],
+                info:{},
             }
         },
         computed:{},
@@ -66,6 +72,11 @@ import CardsInHand from './CardsInHand.vue'
                   console.log(gamedata);
            },
            
+           traitmentresponse:function(datagame){
+                    this.info=datagame;
+                    console.log(datagame);
+
+           },
             onCardPlayed({card,callback}){
                 const self =this;
                 if(this.playedCards.length<4){
@@ -94,9 +105,12 @@ import CardsInHand from './CardsInHand.vue'
                 
             }
         },
+        affichierGames:function(){
+                 this.$beloteService.affichegames(this.traitmentresponse);
+        },
         mounted(){
-            this.$beloteService.connect(function (response) {
-            alert("you're connected : " + response)
+            this.$beloteService.connect(function () {
+            
           })
         }
     }
