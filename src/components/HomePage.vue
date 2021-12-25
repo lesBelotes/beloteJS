@@ -95,9 +95,13 @@ import CardsInHand from './CardsInHand.vue'
             }
         },
         mounted(){
+            this.$beloteService.wsConnect().then(function(){
+                console.log('home page: after socket connection OK')
+            })
+            console.log("mounted")
             this.$beloteService.connect(function (response) {
             alert("you're connected : " + response)
-          })
+          }, "joueur1")
         }
     }
 </script>

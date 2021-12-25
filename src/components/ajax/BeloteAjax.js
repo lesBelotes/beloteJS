@@ -7,7 +7,7 @@ export default class BeloteAjax {
         constructor() {
 
         this.ROOT_URL  = 'http://127.0.0.1:8080';
-
+        this.WS_ROOT_URL  = 'ws://127.0.0.1:8080';
         this.AJAX_API = this.ROOT_URL;
 
         this.authToken="";
@@ -61,13 +61,18 @@ export default class BeloteAjax {
           return this._fetch("delete",url,args)
 
         }
+        put(url,args){
+
+          return this._fetch("put",url,args)
+
+        }
 
         post(url,args){
 
             return this._fetch("post",url,args)
 
         }
-
+        
         _fetch(method,url,args){
 
             url = url.startsWith(this.ROOT_URL)? url : this.AJAX_API+url;
