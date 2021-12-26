@@ -52,7 +52,7 @@
 
         <main class="welcomePageBody" >
 
-        <div v-if="affichejeux==true">
+        <div v-if="affichejeux==true" style="display:contents">
 
             <div class="score" style="float:right">
 
