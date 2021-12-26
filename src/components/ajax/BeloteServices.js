@@ -1,6 +1,5 @@
 import BeloteAjax from "@/components/ajax/BeloteAjax";
-
-
+import BeloteWebsocket from "./BeloteWebsocket";
 
 const BLT_CONNECT="/belote/player";
 const BLT_CREAT="/belote/game";
@@ -12,26 +11,14 @@ export default class BeloteServices {
 
 
     constructor() {
-
-
         this.ajax = new BeloteAjax();
-
         this.ws = new BeloteWebsocket();
-
-
     }
-
-
 
     connect(callback,pseudo){
 
-
-
         const deferred =  this.ajax.post(this._buildUrl(BLT_CONNECT,null,[pseudo]))
-
         this._managePromiseResponse(deferred,callback)
-
-
 
     }
 
@@ -39,11 +26,7 @@ export default class BeloteServices {
 
     wsConnect(){
 
-
-
         return this.ws.connect(BLT_WS_CONNECT)
-
-
 
     }
 

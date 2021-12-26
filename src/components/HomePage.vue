@@ -10,7 +10,7 @@
 
             
 
-            <v-btn v-on:click="affichierGame" class="mx-2" fab dark  color="indigo" >
+            <v-btn v-on:click="createNewGame" class="mx-2" fab dark  color="indigo" >
 
       <v-icon dark>
 
@@ -32,16 +32,20 @@
 
            <div id="left">
 
-              
-
+              <v-card  class="mx-auto"  max-width="300" tile >
+                    <v-list dense>
+                    <v-subheader>  GAMES </v-subheader>
+                    <v-list-item-group color="primary" >
+                        <v-list-item v-for="(gm, i) in games" :key="i" >
+                        <v-list-item-content>
+                             <v-list-item-title v-text="gm.id"></v-list-item-title>
+                             <v-list-item-title v-text=getText(gm)></v-list-item-title>
+                        </v-list-item-content>
+                        </v-list-item>
+                    </v-list-item-group>
+                    </v-list>
+            </v-card>
           </div>
-
-           
-
-           
-
-           
-
         </aside>
 
 
@@ -121,26 +125,21 @@ import CardsInHand from './CardsInHand.vue'
         computed:{},
 
         methods:{
-
-            affichierGame:function(){
-
-                 this.$beloteService.create(this.traitmentjeux)
-
-                 
-
-                console.log("hello");
-
-            
-
+            getText(game){
+                return "state : " + game.state +
+                        ". nb ="+game.nbPlayer ;
+            },
+            createNewGame:function(){
+                 this.$beloteService.create(this.afterCreateGame)
+                 console.log("hello");
            },
 
-           traitmentjeux:function(gamedata){
+           afterCreateGame:function(gamedata){
 
              console.log("bienvenue saisie une partie");
 
                   this.affichejeux=true;
-
-                  console.log(gamedata);
+                  this.games.push(gamedata);
 
            },
 
@@ -193,17 +192,9 @@ import CardsInHand from './CardsInHand.vue'
             calculRoundScore(){
 
                 if(this.playedCards.length===4){
-
-                    this.playedCards.forEach(function(){
-
-
-
-                                    })
-
+                    this.playedCards.forEach(function(){ })
                 }else{
-
                     throw Error('cant compute score : need 4 cards. found  '+this.playedCards.length);
-
                 }
 
                 
@@ -212,14 +203,9 @@ import CardsInHand from './CardsInHand.vue'
 
         },
 
-        affichierGames:function(){
-
-                 this.$beloteService.affichegames(this.traitmentresponse);
-
-        },
 
         mounted(){
-
+             this.$beloteService.affichegames(this.traitmentresponse);
           }
 
     }
