@@ -52,7 +52,7 @@
 
         <main class="welcomePageBody" >
 
-        <div v-if="affichejeux==true">
+        <div v-if="affichejeux==true" style="display:contents">
 
             <div class="score" style="float:right">
 
@@ -113,9 +113,7 @@ import CardsInHand from './CardsInHand.vue'
             return {
 
                 affichejeux:false,
-
                 playedCards:[],
-
                 games:[],
 
             }
@@ -209,7 +207,15 @@ import CardsInHand from './CardsInHand.vue'
 
 
         mounted(){
+            let self = this;
              this.$beloteService.affichegames(this.traitmentresponse);
+             this.$beloteService.connect(null,"pseudo");
+             this.$beloteService.wsConnect().then(function(ws){
+                    console.log("mounted SOCKET : ", ws)
+                    self.$beloteService.wsRegister("belote").then(function(registerResponse){
+                        console.log('registe rResponse : ', registerResponse)
+                    })
+             });
           }
 
     }
