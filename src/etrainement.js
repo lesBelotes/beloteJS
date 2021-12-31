@@ -63,7 +63,7 @@ constructor(nom){
 
      lire(livre){
        console.log(this.nom+" lise"+livre.titre+"nombre"+this.nombreLivreLue);
-       this.nombreLivreLue++,
+       this.nombreLivreLue++;
 
      }
           
