@@ -4,8 +4,8 @@ let produits=[];
 let produitsenligne3=new Array();
 
 // crée un un object prod1 et prod2 : qui contient 3 attributs  id , nom , prix
-let prod1={id:1,nom:'créme main',prix:'145dh'};
-let prod2={id:2,nom:'créme pied',prix:'90dh'};
+let prod1={id:1,nom:'créme main',prix:145};
+let prod2={id:2,nom:'créme pied',prix:90};
 
 
 // ajouter les des produits (prod1, prod2) dans la table produits 
@@ -33,10 +33,11 @@ let afficheproduct=function(produits){
 // faire appel à cette fonction et affiche le resultat
 
 function multipleprice(prod){
-       let newprice=(prod.prix)*2;
-       return newprice;
+        prod.prix=(prod.prix)*2;
+       return prod;
 
 }
         var reponse=multipleprice(prod1);
+        console.log(reponse);
 
 
