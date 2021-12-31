@@ -114,8 +114,8 @@ import CardsInHand from './CardsInHand.vue'
 
                 affichejeux:false,
                 playedCards:[],
-                games:[],,
-                idjoueur:1
+                games:[],
+                idjoueur:1,
 
             }
 
