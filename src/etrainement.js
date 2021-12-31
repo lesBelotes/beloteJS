@@ -1,22 +1,22 @@
 // 1. declare une class Livre .  Avec son constructeur, initialize 2 attributs ,  titre , auteur
 // 2. cree une fonction show qui affiche le titre et nom d'auteur
 
-class Livre{
- titre;
-auteur;
-constructor(titre,auteur){
-this.titre=titre;
-this.auteur=auteur;
+class Livre {
+    titre;
+    auteur;
+    constructor(titre, auteur) {
+        this.titre = titre;
+        this.auteur = auteur;
 
-}
+    }
 
 
-    show(){
+    show() {
 
-console.log(this.titre+" "+this.auteur);
- 
+        console.log(this.titre + " " + this.auteur);
 
-} 
+
+    }
 
 }
 
@@ -27,23 +27,23 @@ console.log(this.titre+" "+this.auteur);
 //3. cree une instance de de type Livre , avec les argument titre = les mesirable , auteur ="victor Higo"
 //4. faire appel à la fonction  show
 
-var book=new Livre("les mesirable","victor Higo");
-      book.show();
+var book = new Livre("les mesirable", "victor Higo");
+book.show();
 
 //5. cree une autre instance de type Livre
-var booking=new Livre("la boite à merveille","ahmed sefroui");
+var booking = new Livre("la boite à merveille", "ahmed sefroui");
 
 booking.show();
 //6. cree une tableau  biblio  qui contient les deux livre créent precedemment.
 
-let biblio=[book,booking];
+let biblio = [book, booking];
 
 
 //7. affiche le contenu de chaque livre dans la biblio
 
-for(var i=0;i<biblio.length;i++){
+for (var i = 0; i < biblio.length; i++) {
 
-console.log(biblio[i]);
+    console.log(biblio[i]);
 
 
 }
@@ -53,31 +53,31 @@ console.log(biblio[i]);
 // cette class contient la fonction "lire"  qui prend en paramettre un livre  et affiche son nom
 // la class contient auusi l'attribut nombreLivreLue qui s'increment apres chaque lecture
 
-class Etudiant  {
-nom;
-nombreLivreLue=0;
-constructor(nom){
-    this.nom=nom;
+class Etudiant {
+    nom;
+    nombreLivreLue = 0;
+    constructor(nom) {
+        this.nom = nom;
+
+    }
+
+    lire(livre) {
+        this.nombreLivreLue++;
+        console.log(this.nom + " lise" + " " + livre.titre + " " + "nombre" + " " + this.nombreLivreLue);
+
+
+    }
 
 }
 
-     lire(livre){
-        this.nombreLivreLue++;
-       console.log(this.nom+" lise"+" "+livre.titre+" "+"nombre"+" "+this.nombreLivreLue);
-     
-
-     }
-          
-    }
-
 
 //cree un etudiant et qui va lire 2 livre
- var e=new Etudiant("jamal");
-   e.lire(book);
-   e.lire(booking);
+var e = new Etudiant("jamal");
+e.lire(book);
+e.lire(booking);
 // affiche le nom et le nombre de livre créent
 
-console.log("le nom"+" "+e.nom+" "+e.nombreLivreLue);
+console.log("le nom" + " " + e.nom + " " + e.nombreLivreLue);
 // affiche le nom et le nombre de livre créent
 
 
@@ -86,29 +86,36 @@ console.log("le nom"+" "+e.nom+" "+e.nombreLivreLue);
 // crée une fonction qui permet d'ajouter des livre dans la bibliotheque de l'ecole
 // crée une fonction qui permet l'inscription des etudiants
 // crée une fonction qui affiche le nombre d'inscrits et le nombre de livre
-class Ecole{
+class Ecole {
 
 
-constructor(){
-    biblio=[];
-    lesInscrits=[];
+    constructor() {
+        let biblio=[];
+        let lesInscrits=[];
+
+    }
+    ajouterlivre(livre) {
+
+        biblio.push(livre);
+
+    }
+    ajouterEtudiant(etudiant) {
+        lesInscrits.push(etudiant);
+
+    }
+
+    nombre() {
+
+        console.log(biblio.length + " " + lesInscrits.length);
+    }
+
 
 }
-ajouterlivre(livre){
+let ecole=new Ecole();
 
-biblio.push(livre);
-
-}
-ajouterEtudiant(etudiant){
-    lesInscrits.push(etudiant);
-
-}
-
-nombre(){
-
-console.log(biblio.length+" "+lesInscrits.length);
+ecole.ajouterlivre(book);
+ecole.ajouterlivre(booking);
+ecole.ajouterEtudiant(e);
+ecole.nombre();
 
 
-}
-
-}
