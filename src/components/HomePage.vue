@@ -144,7 +144,7 @@ import CardsInHand from './CardsInHand.vue'
 
            participe:function(idgame,idjoueur){
 
-                 this.$beloteService.participer(function({}),idgame,idjoueur);
+                 this.$beloteService.participer(function(){},idgame,idjoueur);
 
            }
 
