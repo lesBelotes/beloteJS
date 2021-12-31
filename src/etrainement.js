@@ -106,7 +106,7 @@ class Ecole {
 
     nombre() {
 
-        console.log(this.biblio.length + " " + this.lesInscrits.length);
+        console.log("le nombre des livres"+""+" le nombre des étudiants"+" "+this.biblio.length + " " + this.lesInscrits.length);
     }
 
 
