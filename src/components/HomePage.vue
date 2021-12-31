@@ -114,7 +114,8 @@ import CardsInHand from './CardsInHand.vue'
 
                 affichejeux:false,
                 playedCards:[],
-                games:[],
+                games:[],,
+                idjoueur:1
 
             }
 
@@ -143,7 +144,7 @@ import CardsInHand from './CardsInHand.vue'
 
            participe:function(idgame,idjoueur){
 
-                 this.$beloteService.participer(callback,idgame,1);
+                 this.$beloteService.participer(callback,idgame,idjoueur);
 
            }
 
