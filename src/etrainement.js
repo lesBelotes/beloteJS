@@ -10,7 +10,7 @@ let prod2={id:2,nom:'créme pied',prix:'90dh'};
 
 // ajouter les des produits (prod1, prod2) dans la table produits 
     
-  produits=[prod1,prod2];//initialisation avec valeur
+  produits=[prod1,prod2];//initialisation avec valeur prod1 et prod2
 
   produits.push(prod1);// ajouteur des elemnts dans un tableau avc push
     produits.push(prod2);
@@ -31,8 +31,9 @@ let afficheproduct=function(produits){
 
 // crée une fonction qui prends en paramettre un object produit et qui renvoie le meme objet apres avoir multiplié son prix par deux
 // faire appel à cette fonction et affiche le resultat
-function multipleprice(prod1){
-       let newprice=(prod1.prix)*2;
+
+function multipleprice(prod){
+       let newprice=(prod.prix)*2;
        return newprice;
 
 }
