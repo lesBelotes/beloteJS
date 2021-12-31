@@ -71,6 +71,7 @@ constructor(nom){
     }
 
 
+<<<<<<< Updated upstream
 //cree un etudiant et qui va lire 2 livre
  var e=new Etudiant("jamal");
    e.lire(book);
@@ -78,3 +79,13 @@ constructor(nom){
 // affiche le nom et le nombre de livre créent
 
 console.log("le nom"+" "+e.nom+" "+e.nombreLivreLue);
+=======
+// affiche le nom et le nombre de livre créent
+
+
+
+// cree la class Ecole , elle contient une tableau biblio, un tableau lesInscrits
+// crée une fonction qui permet d'ajouter des livre dans la bibliotheque de l'ecole
+// crée une fonction qui permet l'inscription des etudiants
+// crée une fonction qui affiche le nombre d'inscrits et le nombre de livre
+>>>>>>> Stashed changes
