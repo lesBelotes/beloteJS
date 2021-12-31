@@ -53,7 +53,7 @@ console.log(biblio[i]);
 // cette class contient la fonction "lire"  qui prend en paramettre un livre  et affiche son nom
 // la class contient auusi l'attribut nombreLivreLue qui s'increment apres chaque lecture
 
-class Etudiant extends Livre {
+class Etudiant  {
 nom;
 nombreLivreLue=0;
 constructor(nom){
@@ -62,8 +62,9 @@ constructor(nom){
 }
 
      lire(livre){
-       console.log(this.nom+" lise"+livre.titre+"nombre"+this.nombreLivreLue);
-       this.nombreLivreLue++;
+        this.nombreLivreLue++;
+       console.log(this.nom+" lise"+" "+livre.titre+" "+"nombre"+" "+this.nombreLivreLue);
+     
 
      }
           
@@ -76,4 +77,4 @@ constructor(nom){
    e.lire(booking);
 // affiche le nom et le nombre de livre créent
 
-console.log("le nom"+e.titre+" "+e.nombreLivreLue);
+console.log("le nom"+" "+e.nom+" "+e.nombreLivreLue);
