@@ -47,3 +47,15 @@ console.log(biblio[i]);
 
 
 }
+
+
+//8. cree la class Etudiant , avec attribut nom  à initilizer avec le contructeur
+// cette class contient la fonction "lire"  qui prend en paramettre un livre  et affiche son nom
+// la class contient auusi l'attribut nombreLivreLue qui s'increment apres chaque lecture
+
+
+
+//cree un etudiant et qui va lire 2 livre
+
+
+// affiche le nom et le nombre de livre créent
