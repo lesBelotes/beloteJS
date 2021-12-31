@@ -10,7 +10,7 @@ let prod2={id:2,nom:'créme pied',prix:'90dh'};
 
 // ajouter les des produits (prod1, prod2) dans la table produits 
     
-  produits=[prod1,prod1];//initialisation avec valeur
+  produits=[prod1,prod2];//initialisation avec valeur
 
   produits.push(prod1);// ajouteur des elemnts dans un tableau avc push
     produits.push(prod2);
