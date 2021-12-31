@@ -90,23 +90,23 @@ class Ecole {
 
 
     constructor() {
-        let biblio=[];
-        let lesInscrits=[];
+         this.biblio=[];
+         this.lesInscrits=[];
 
     }
     ajouterlivre(livre) {
 
-        biblio.push(livre);
+        this.biblio.push(livre);
 
     }
     ajouterEtudiant(etudiant) {
-        lesInscrits.push(etudiant);
+        this.lesInscrits.push(etudiant);
 
     }
 
     nombre() {
 
-        console.log(biblio.length + " " + lesInscrits.length);
+        console.log(this.biblio.length + " " + this.lesInscrits.length);
     }
 
 
