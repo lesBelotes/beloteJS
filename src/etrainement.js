@@ -11,10 +11,10 @@ this.auteur=auteur;
 }
 
 
-    Show(){
+    show(){
 
 console.log(this.titre+" "+this.auteur);
- console.log(Livre.titre+" "+Livre.auteur);
+ 
 
 } 
 
@@ -28,15 +28,22 @@ console.log(this.titre+" "+this.auteur);
 //4. faire appel à la fonction  show
 
 var book=new Livre("les mesirable","victor Higo");
-
+      book.show();
 
 //5. cree une autre instance de type Livre
+var booking=new Livre("la boite à merveille","ahmed sefroui");
 
-
-
+booking.show();
 //6. cree une tableau  biblio  qui contient les deux livre créent precedemment.
 
+let biblio=[book,booking];
 
 
 //7. affiche le contenu de chaque livre dans la biblio
 
+for(var i=0;i<biblio.length;i++){
+
+console.log(biblio[i]);
+
+
+}
