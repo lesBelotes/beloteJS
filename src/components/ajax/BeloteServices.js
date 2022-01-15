@@ -49,7 +49,7 @@ export default class BeloteServices {
      * @param {*} topic  : le sujet sur lequel on enregitre le listener 
      */
     wsRegister(){
-        return this.ws.register(["newPlayer","newGame","beloteGeneric"])
+        return this.ws.register(["newPlayer","newGame","beloteGeneric","cardPlayed"])
     }
 
     //   END  WEBSOCKET SERVICES-----------------------------
