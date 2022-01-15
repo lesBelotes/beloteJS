@@ -36,7 +36,7 @@
                     <v-list dense>
                     <v-subheader>  GAMES </v-subheader>
                     <v-list-item-group color="primary" >
-                        <v-list-item v-for="(gm, i) in games" :key="i" >
+                        <v-list-item @dblclick="participe(gm.id,idjoueur)"    v-for="(gm, i) in games" :key="i" >
                         <v-list-item-content>
                              <v-list-item-title v-text="gm.id"></v-list-item-title>
                              <v-list-item-title v-text=getText(gm)></v-list-item-title>
@@ -115,6 +115,7 @@ import CardsInHand from './CardsInHand.vue'
                 affichejeux:false,
                 playedCards:[],
                 games:[],
+                idjoueur:1,
 
             }
 
@@ -141,7 +142,11 @@ import CardsInHand from './CardsInHand.vue'
 
            },
 
-           
+           participe:function(idgame,idjoueur){
+
+                 this.$beloteService.participer(function(){},idgame,idjoueur);
+
+           }
 
            traitmentresponse:function(datagame){
 

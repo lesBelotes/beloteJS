@@ -5,6 +5,7 @@ const BLT_CONNECT="/belote/player";
 const BLT_CREAT="/belote/game";
 const BLT_WS_CONNECT="/beloteWebSocket";
 const BLT_GAMES="/belote/games";
+const BLT_belote="/belote/game/player"
 
 export default class BeloteServices {
 
@@ -21,6 +22,21 @@ export default class BeloteServices {
         this._managePromiseResponse(deferred,callback)
 
     }
+    participer(callback,idjeux,idjoueur){
+
+        const deferred =  this.ajax.post(this._buildUrl(BLT_belote,null,[idjeux,idjoueur]))
+        this._managePromiseResponse(deferred,callback)
+
+    }
+
+
+    wsConnect(){
+
+        return this.ws.connect(BLT_WS_CONNECT)
+
+    }
+
+
 
     create(callback){
 
